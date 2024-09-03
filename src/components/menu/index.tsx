@@ -1,10 +1,10 @@
-import { MouseEventHandler, useEffect, useState } from 'react'
+import { MouseEventHandler, ReactNode, useEffect, useState } from 'react'
 import { Card } from '../card'
 import { useLocation } from 'react-router-dom'
 import { RoutesConfig } from '@config/routes'
 
 export type MenuItem = {
-  label: string,
+  label: ReactNode,
   icon?: string,
   path?: string,
   onClick?: MouseEventHandler<HTMLAnchorElement>,
@@ -43,7 +43,7 @@ export const Menu = ({ menus }: MenuProps) => {
           {menu.items.map((item) => (
             <li>
               {item.isTitle ?
-                <div className="py-4 my-2 px-4 bg-grey dark:bg-neutral-700 uppercase font-thin text-xs">
+                <div className="py-4 px-4 bg-grey dark:bg-neutral-700 uppercase font-thin text-xs">
                   {item.icon && <span className="material-symbols-outlined">{item.icon}</span>} {item.label}
                 </div> :
                 <a

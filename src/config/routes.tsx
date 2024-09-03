@@ -30,11 +30,46 @@ export const RoutesConfig: RouteConfigItem[] = [
   },
   {
     layout: DefaultLayout,
+    path: '/form',
+    props: {
+      title: <><span className="material-symbols-outlined">input</span> Formulários</>,
+      menuLabel: 'Formulários',
+      menuIcon: 'input',
+    },
+    element: <>Formulários</>,
+  },
+  {
+    layout: DefaultLayout,
+    path: '/login',
+    props: {
+      title: <><span className="material-symbols-outlined">passkey</span> Login</>,
+      menuLabel: 'Login',
+      menuIcon: 'passkey',
+    },
+    element: <>Login</>,
+  },
+  {
+    path: '/empty',
+    props: {
+      title: <><span className="material-symbols-outlined">check_box_outline_blank</span> Sem Template</>,
+      menuLabel: 'Sem Template',
+      menuIcon: 'check_box_outline_blank',
+    },
+    element: <>Sem Template</>,
+  },
+  {
+    props: {
+      menuLabel: 'Separador',
+      menuIcon: 'thumb_up',
+    },
+  },
+  {
+    layout: DefaultLayout,
     path: '/item-1',
     props: {
-      title: <><span className="material-symbols-outlined">home</span> Item 1</>,
+      title: <><span className="material-symbols-outlined">switch_access</span> Item 1</>,
       menuLabel: 'Item 1',
-      menuIcon: 'home',
+      menuIcon: 'switch_access',
     },
     element: <>Item 1</>,
   },
@@ -42,9 +77,9 @@ export const RoutesConfig: RouteConfigItem[] = [
     layout: DefaultLayout,
     path: '/item-2',
     props: {
-      title: <><span className="material-symbols-outlined">check_circle</span> Item 2</>,
+      title: <><span className="material-symbols-outlined">clock_loader_80</span> Item 2</>,
       menuLabel: 'Item 2',
-      menuIcon: 'check_circle',
+      menuIcon: 'clock_loader_80',
     },
     element: <>Item 2</>,
   },
@@ -52,56 +87,10 @@ export const RoutesConfig: RouteConfigItem[] = [
     layout: DefaultLayout,
     path: '/item-3',
     props: {
-      title: <><span className="material-symbols-outlined">key</span> Item 3</>,
-      menuLabel: 'Item 3',
-      menuIcon: 'key',
-    },
-    element: <>Item 3</>,
-  },
-  {
-    layout: DefaultLayout,
-    path: '/item-4',
-    props: {
-      title: <><span className="material-symbols-outlined">keep_public</span> Item 4</>,
-      menuLabel: 'Item 4',
-      menuIcon: 'keep_public',
-    },
-    element: <>Item 4</>,
-  },
-  {
-    props: {
-      menuLabel: 'Titulo 1',
-      menuIcon: 'thumb_up',
-    },
-  },
-  {
-    layout: DefaultLayout,
-    path: '/item-6',
-    props: {
-      title: <><span className="material-symbols-outlined">switch_access</span> Item 6</>,
-      menuLabel: 'Item 1',
-      menuIcon: 'switch_access',
-    },
-    element: <>Item 6</>,
-  },
-  {
-    layout: DefaultLayout,
-    path: '/item-7',
-    props: {
-      title: <><span className="material-symbols-outlined">clock_loader_80</span> Item 7</>,
-      menuLabel: 'Item 2',
-      menuIcon: 'clock_loader_80',
-    },
-    element: <>Item 7</>,
-  },
-  {
-    layout: DefaultLayout,
-    path: '/item-8',
-    props: {
-      title: <><span className="material-symbols-outlined">expand_circle_right</span> Item 8</>,
+      title: <><span className="material-symbols-outlined">expand_circle_right</span> Item 3</>,
       menuLabel: 'Item 3',
       menuIcon: 'expand_circle_right',
     },
-    element: <>Item 8</>,
+    element: <>Item 3</>,
   },
 ]

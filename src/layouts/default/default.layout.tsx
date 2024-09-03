@@ -53,13 +53,22 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
             </a>
           </div>
           <nav className="flex flex-col justify-between">
-            {/* TODO: Pegar via config */}
             <Menu menus={[
               {
                 items: menuItems,
               },
               {
                 items: [
+                  {
+                    label: <span className='flex items-center gap-6 justify-center'>
+                      Erik Figueiredo
+                      {' '}
+                      <Rounded>
+                        <img src="https://avatars.githubusercontent.com/u/4331013?v=4" width={40} height={40} alt="" />
+                      </Rounded>
+                    </span>,
+                    isTitle: true,
+                  },
                   {
                     label: 'Meu perfil',
                     icon: 'manage_accounts'
@@ -76,7 +85,6 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
         <main className="overflow-x-hidden">
 
           <header className='flex justify-between items-center h-12 mt-6 ml-6 mr-6 mb-2'>
-            {/* TODO: Pegar via config */}
             <Typography type="h1" className='!text-2xl'>
               {title}
             </Typography>
@@ -86,13 +94,6 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
                 <span className="material-symbols-outlined">{isDarkMode ? 'brightness_4' : 'brightness_7'}</span> Dark Mode
               </Toggle>
 
-              <a href="" className='flex items-center gap-6'>
-                Erik Figueiredo
-                {' '}
-                <Rounded>
-                  <img src="https://avatars.githubusercontent.com/u/4331013?v=4" width={40} height={40} alt="" />
-                </Rounded>
-              </a>
             </Typography>
           </header>
 

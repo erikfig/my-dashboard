@@ -2,16 +2,39 @@ import { useCallback } from 'react'
 import { Rounded } from '../../components/rounded'
 import { useDarkMode } from '../../contexts/dark-mode'
 import './style.css'
-import { Menu } from '../../components/menu'
+import { Menu, MenuItem } from '../../components/menu'
 import { Typography } from '../../components/Typography'
 import { Toggle } from '../../components/form/toggle'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { RoutesConfig } from '@config/routes'
 
 type DefaultLayoutProps = {
-  children: React.ReactNode
+  title?: string
 }
 
-export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
+export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
   const { isDarkMode, toggleDarkMode } = useDarkMode()
+
+  const menuItems = RoutesConfig
+    .filter((route) => route.props?.menuIcon && route.props?.menuLabel)
+    .map((route) => {
+      const menuItem: MenuItem = {
+        label: route.props?.menuLabel as string,
+        icon: route.props?.menuIcon,
+      }
+
+      if (route.path) {
+        menuItem.path = route.path
+        menuItem.onClick = () => navigate(route.path as string)
+      }
+
+      if (!route.path) {
+        menuItem.isTitle = true
+      }
+      return menuItem
+    })
+
+  const navigate = useNavigate()
 
   const darkModeHandler = useCallback(() => {
     toggleDarkMode()
@@ -33,41 +56,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
             {/* TODO: Pegar via config */}
             <Menu menus={[
               {
-                items: [
-                  {
-                    label: 'Item 1',
-                    icon: 'home'
-                  },
-                  {
-                    label: 'Item 2',
-                    icon: 'check_circle'
-                  },
-                  {
-                    label: 'Item 3',
-                    icon: 'key'
-                  },
-                  {
-                    label: 'Item 4',
-                    icon: 'keep_public'
-                  },
-                  {
-                    label: 'Titulo 1',
-                    icon: 'thumb_up',
-                    isTitle: true,
-                  },
-                  {
-                    label: 'Item 1',
-                    icon: 'switch_access'
-                  },
-                  {
-                    label: 'Item 2',
-                    icon: 'clock_loader_80'
-                  },
-                  {
-                    label: 'Item 3',
-                    icon: 'expand_circle_right'
-                  },
-                ],
+                items: menuItems,
               },
               {
                 items: [
@@ -89,7 +78,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
           <header className='flex justify-between items-center h-12 mt-6 ml-6 mr-6 mb-2'>
             {/* TODO: Pegar via config */}
             <Typography type="h1" className='!text-2xl'>
-              <span className="material-symbols-outlined">home</span> Titulo h1
+              {title}
             </Typography>
             <Typography type="display" className='flex items-center gap-6'>
 
@@ -107,7 +96,7 @@ export const DefaultLayout = ({ children }: DefaultLayoutProps) => {
             </Typography>
           </header>
 
-          {children}
+          <Outlet />
         </main>
       </div>
     </div>

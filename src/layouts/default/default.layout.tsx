@@ -7,6 +7,7 @@ import { Typography } from '../../components/Typography'
 import { Toggle } from '../../components/form/toggle'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { RoutesConfig } from '@config/routes'
+import { Img } from '../../components/img'
 
 type DefaultLayoutProps = {
   title?: string
@@ -47,7 +48,7 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
           <div className='m-6'>
 
             <a href="" className="flex items-center gap-3">
-              <Rounded><img src="/logo.png" width={50} height={50} /></Rounded>
+              <Rounded><Img src="/logo.png" width={50} height={50} /></Rounded>
               {' '}
               <span>Erik <span className='text-primary'>Dashboard</span></span>
             </a>

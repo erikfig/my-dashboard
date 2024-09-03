@@ -15,7 +15,7 @@ export const Typography = ({ children, type = 'p', ...props }: TypographyProps) 
     h4: 'text-lg',
     h5: 'text-base',
     h6: 'text-sm',
-    p: 'text-base',
+    p: 'text-base mb-6',
     span: 'text-sm',
     display: 'text-base',
   }

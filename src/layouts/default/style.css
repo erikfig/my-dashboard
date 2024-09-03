@@ -12,8 +12,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: var(--color-dark);
-  width: calc(100vw - 7px);
-  margin-left: 7px;
+  width: calc(100vw);
   overflow-x: hidden;
 }
 

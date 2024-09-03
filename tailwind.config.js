@@ -29,5 +29,11 @@ export default {
       }
     },
   },
+  safelist: [
+    '!bg-danger',
+    '!bg-warning',
+    '!bg-success',
+    '!bg-info',
+  ],
   plugins: [],
 }

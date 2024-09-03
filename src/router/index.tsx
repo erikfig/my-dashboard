@@ -21,7 +21,7 @@ export const Router = () => {
   }, [])
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.VITE_BASE_APP ? import.meta.env.VITE_BASE_APP : '/'}>
       <Routes key="routes-root">
         {RoutesConfig.map(routeMaker)}
       </Routes>

@@ -39,13 +39,18 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
 
   const darkModeHandler = useCallback(() => {
     toggleDarkMode()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDarkMode])
 
   return (
     <div className={isDarkMode ? 'dark' : ''}>
       <div className='grid h-screen w-screen grid-cols-wrapper bg-grey dark:bg-dark dark:text-light'>
-        <section className='grid grid-rows-nav h-screen'>
+        <section className='bg-grey dark:bg-dark fixed z-10 w-screen sm:w-auto sm:relative grid grid-rows-nav h-screen overflow-y-auto'>
           <div className='m-6'>
+
+            <div className='absolute top-6 right-6'>
+              <span className="material-symbols-outlined">close</span>
+            </div>
 
             <a href="" className="flex items-center gap-3">
               <Rounded><Img src="/logo.png" width={50} height={50} /></Rounded>
@@ -83,7 +88,7 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
             ]} />
           </nav>
         </section>
-        <main className="overflow-x-hidden">
+        <main className="relative z-0 overflow-x-hidden">
 
           <header className='flex justify-between items-center h-12 mt-6 ml-6 mr-6 mb-2'>
             <Typography type="h1" className='!text-2xl'>

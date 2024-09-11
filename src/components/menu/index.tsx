@@ -24,7 +24,7 @@ export const Menu = ({ menus }: MenuProps) => {
   const location = useLocation()
 
   const menuItem = 'py-4 px-4 block hover:bg-grey hover:dark:bg-neutral-700 hover:no-underline transition-all duration-500'
-  const menuActive = 'py-4 px-4 block bg-primary hover:no-underline transition-all duration-500'
+  const menuActive = 'text-white py-4 px-4 block bg-primary hover:no-underline transition-all duration-500'
 
   useEffect(() => {
     RoutesConfig.find((route) => {

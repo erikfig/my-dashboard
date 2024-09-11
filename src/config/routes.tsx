@@ -2,6 +2,7 @@ import { DefaultLayout } from '@layouts/default/default.layout'
 import { RouteObject } from 'react-router-dom'
 import { Home } from '../pages/home'
 import { ReactNode } from 'react'
+import { NoTemplate } from '@pages/no-template'
 
 type RouteConfigItemProps = {
   title?: ReactNode,
@@ -22,7 +23,7 @@ export const RoutesConfig: RouteConfigItem[] = [
     path: '/',
     home: true,
     props: {
-      title: <><span className="material-symbols-outlined">home</span> Titulo h1</>,
+      title: <><span className="material-symbols-outlined">home</span> Dashboard Home Page</>,
       menuLabel: 'Home',
       menuIcon: 'home',
     },
@@ -55,7 +56,7 @@ export const RoutesConfig: RouteConfigItem[] = [
       menuLabel: 'Sem Template',
       menuIcon: 'check_box_outline_blank',
     },
-    element: <>Sem Template</>,
+    element: <NoTemplate />,
   },
   {
     props: {

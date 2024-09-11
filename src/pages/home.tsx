@@ -77,12 +77,12 @@ export const Home = () => {
 
       <div className="grid grid-cols-12">
         <Card className="col-span-4">
-          <Typography type='h3'>Titulo h3</Typography>
+          <Typography type='h3'>Radial Chart</Typography>
           <Radial />
         </Card>
 
         <Card className="col-span-8">
-          <Typography type='h3'>Titulo h3</Typography>
+          <Typography type='h3'>Column Chart</Typography>
           <Bar />
         </Card>
       </div>

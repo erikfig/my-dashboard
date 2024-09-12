@@ -25,9 +25,9 @@ export const LoginLayout = () => {
 
   return (
     <div className={isDarkMode ? 'dark' : ''}>
-      <div className="grid grid-cols-2 h-screen">
+      <div className="lg:grid lg:grid-cols-2 h-screen">
 
-        <div className="flex justify-center items-center bg-gray-300 relative">
+        <div className="hidden lg:flex justify-center items-center bg-gray-300 relative">
           <CardBackground src="/programmer.jpeg" className="bg-dark/80 rounded-full text-white flex flex-col gap-16 items-center justify-around">
             <div className="flex items-center gap-3">
               <Rounded><Img src="/logo.png" width={50} height={50} /></Rounded>
@@ -37,7 +37,7 @@ export const LoginLayout = () => {
           </CardBackground>
         </div>
 
-        <div className="flex justify-center items-center bg-gray-200 dark:text-white dark:bg-gray-800 p-4">
+        <div className="flex justify-center items-center bg-gray-200 dark:text-white dark:bg-gray-800 p-4 h-screen">
           <FormContainer style={{ maxWidth: 400, width: '100%' }} onSubmit={submit}>
             <Card className='flex gap-6 flex-col'>
               <Typography type="h2" className="flex items-center gap-3">

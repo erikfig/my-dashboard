@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { Button } from '../components/button'
 import { Card } from '../components/card'
 import { FormContainer } from '../components/form/form-container'
@@ -16,6 +16,17 @@ export const Forms = () => {
   })
 
   const { handleOnChange, handleOnChangeMultiple } = useOnChange<typeof formData>(formData, setFormData)
+
+  const reset = useCallback(() => {
+    setFormData({
+      'input-password': null,
+      'input-text-checkbox': null,
+      'input-text-radio': null,
+      'input-text-toggle': null,
+      'input-text-select': null,
+      'input-text-select-multiple': null,
+    })
+  }, [formData])
 
   return (
     <Card>
@@ -154,7 +165,7 @@ export const Forms = () => {
 
         <div>
           <Button>Confirm button</Button>
-          <Button type="reset" className="bg-gray-500 hover:bg-dark">Reset button</Button>
+          <Button type="reset" color="bg-gray-600" onClick={reset}>Reset button</Button>
         </div>
       </FormContainer>
     </Card>

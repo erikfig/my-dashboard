@@ -5,6 +5,7 @@ import { ReactNode } from 'react'
 import { NoTemplate } from '@pages/no-template'
 import { Forms } from '@pages/forms'
 import { LoginLayout } from '@layouts/default/login.layout'
+import { LoginPage } from '@pages/login'
 
 type RouteConfigItemProps = {
   title?: ReactNode,
@@ -49,7 +50,7 @@ export const RoutesConfig: RouteConfigItem[] = [
       menuLabel: 'Login',
       menuIcon: 'passkey',
     },
-    element: <></>,
+    element: <LoginPage />,
   },
   {
     path: '/empty',

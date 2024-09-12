@@ -49,7 +49,7 @@ export const Forms = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <Input
             name="input-password"
             label="Password"
@@ -65,7 +65,7 @@ export const Forms = () => {
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           <Input
             name="input-text-checkbox"
             label="Checkbox field"
@@ -121,7 +121,7 @@ export const Forms = () => {
           error
         />
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <Input
             name="input-text-select"
             label="Select"

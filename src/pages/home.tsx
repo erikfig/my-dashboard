@@ -36,7 +36,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="grid grid-cols-3">
+      <div className="grid xl:grid-cols-3">
         <Card className="flex flex-row justify-between !py-4 items-center">
           <div>
             <Typography type="h5">Likes (30 days)</Typography>
@@ -68,29 +68,31 @@ export const Home = () => {
         </Card>
       </div>
 
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-2 xl:grid-cols-4">
         <CardStatus title="Error Card" message="Error Message" status="danger" />
         <CardStatus title="Warning Card" message="Warning Message" status="warning" />
         <CardStatus title="Success Card" message="Success Message" status="success" />
         <CardStatus title="Info Card" message="Info Message" status="info" />
       </div>
 
-      <div className="grid grid-cols-12">
-        <Card className="col-span-4">
+      <div className="grid xl:grid-cols-12">
+        <Card className="xl:col-span-4">
           <Typography type='h3'>Radial Chart</Typography>
-          <Radial />
+          <div className="flex h-full justify-center items-center">
+            <Radial />
+          </div>
         </Card>
 
-        <Card className="col-span-8">
+        <Card className="xl:col-span-8">
           <Typography type='h3'>Column Chart</Typography>
           <Bar />
         </Card>
       </div>
 
-      <div className="grid grid-cols-12">
+      <div className="grid xl:grid-cols-12">
         <DataTableAsync title='Last Users' query={query} columns={columns} onChange={(p) => setPage(p)} />
 
-        <Card className="col-span-4 !bg-transparent">
+        <Card className="xl:col-span-4 !bg-transparent">
           <CardBackground src="/programmer.jpeg" className="bg-dark/80 text-white">
             <Typography type="h2" className='mb-4'>Erik Figueiredo</Typography>
             <Typography>Desenvolvedor FullStack Sênior com mais de 15 anos de experiência, especializado em Node.js, TypeScript e PHP.</Typography>

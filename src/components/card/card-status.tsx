@@ -15,12 +15,12 @@ const icons = {
 }
 
 export const CardStatus = ({ title, message, status }: CardStatusProps) => (
-  <Card className={`flex flex-row justify-between !py-4 !bg-${status} text-white`}>
+  <Card className={`flex flex-row justify-between !py-4 px-4 md:px-8 !bg-${status} text-white`}>
     <div>
       <Typography type="h5">{title}</Typography>
       <Typography type="h2" className="font-bold">{message}</Typography>
     </div>
-    <div className="chart">
+    <div className="hidden md:block chart">
       <span className="material-symbols-outlined !text-6xl">{icons[status]}</span>
     </div>
   </Card>

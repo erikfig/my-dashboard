@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { Rounded } from '../../components/rounded'
 import { useDarkMode } from '../../contexts/dark-mode'
 import './style.css'
@@ -14,6 +14,7 @@ type DefaultLayoutProps = {
 }
 
 export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { isDarkMode, toggleDarkMode } = useDarkMode()
 
   const menuItems = RoutesConfig
@@ -39,16 +40,16 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
 
   const darkModeHandler = useCallback(() => {
     toggleDarkMode()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDarkMode])
 
   return (
     <div className={isDarkMode ? 'dark' : ''}>
-      <div className='grid h-screen w-screen grid-cols-wrapper bg-grey dark:bg-dark dark:text-light'>
-        <section className='bg-grey dark:bg-dark fixed z-10 w-screen sm:w-auto sm:relative grid grid-rows-nav h-screen overflow-y-auto'>
+      <div className='grid h-screen w-screen lg:grid-cols-wrapper bg-grey dark:bg-dark dark:text-light'>
+        <section className={`bg-grey dark:bg-dark fixed z-10 left-0 w-screen lg:w-auto lg:relative grid grid-rows-nav h-screen overflow-y-auto transition-all ${!isMenuOpen && '-ml-[100%] lg:ml-0'}`}>
           <div className='m-6'>
 
-            <div className='absolute top-6 right-6'>
+            <div className='block lg:hidden absolute top-6 right-6 cursor-pointer' onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <span className="material-symbols-outlined">close</span>
             </div>
 
@@ -90,14 +91,17 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
         </section>
         <main className="relative z-0 overflow-x-hidden">
 
-          <header className='flex justify-between items-center h-12 mt-6 ml-6 mr-6 mb-2'>
-            <Typography type="h1" className='!text-2xl'>
+          <header className='flex gap-4 justify-between items-center h-12 mt-6 ml-6 mr-6 mb-2'>
+            <Typography ellipsis type="h1" className='!text-2xl'>
+              <div className='block lg:hidden cursor-pointer float-left mr-4' onClick={() => setIsMenuOpen(true)}>
+                <span className="material-symbols-outlined">menu</span>
+              </div>
               {title}
             </Typography>
             <Typography type="display" className='flex items-center gap-6'>
 
               <Toggle checked={isDarkMode} onClick={darkModeHandler}>
-                <span className="material-symbols-outlined">{isDarkMode ? 'brightness_4' : 'brightness_7'}</span> Dark Mode
+                <span className="material-symbols-outlined">{isDarkMode ? 'brightness_4' : 'brightness_7'}</span> <span className="hidden md:inline-flex">Dark Mode</span>
               </Toggle>
 
             </Typography>

@@ -3,9 +3,10 @@ import { createElement, HTMLAttributes, ReactNode } from 'react'
 export type TypographyProps = {
   type?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'display' | undefined,
   children: ReactNode,
+  ellipsis?: boolean
 } & HTMLAttributes<HTMLDivElement>
 
-export const Typography = ({ children, type = 'p', ...props }: TypographyProps) => {
+export const Typography = ({ children, type = 'p', ellipsis, ...props }: TypographyProps) => {
   let localType: string = type
 
   const typeClasses = {
@@ -24,6 +25,10 @@ export const Typography = ({ children, type = 'p', ...props }: TypographyProps) 
 
   if (props.className) {
     className.push(props.className)
+  }
+
+  if (ellipsis) {
+    className.push('text-nowrap text-ellipsis overflow-hidden')
   }
 
   if (type === 'display') {

@@ -6,7 +6,7 @@ import { Typography } from '../Typography'
 type DataTableProps = { title?: string } & TableProps & PaginationProps
 
 export const DataTable = ({ title, columns, rows, perPage, current, total, onChange, isLoading }: DataTableProps) => (
-  <Card className="col-span-8 !p-0">
+  <Card className="col-span-8 !p-0 !overflow-auto">
     {title &&
       <Typography type='h3' className='p-4'>{title}</Typography>
     }

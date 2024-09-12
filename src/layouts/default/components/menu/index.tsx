@@ -39,7 +39,7 @@ export const Menu = ({ menus }: MenuProps) => {
   return (
     <>
       {menus.map((menu) => (
-        <Card type="ul" className="list-none !p-0">
+        <Card type="ul" className="list-none !p-0 my-3">
           {menu.items.map((item) => (
             <li>
               {item.isTitle ?

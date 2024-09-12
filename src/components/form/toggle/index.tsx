@@ -2,8 +2,8 @@ import { ReactNode } from 'react'
 
 type ToggleProps = {
   checked?: boolean,
-  onClick: () => void,
-  children: ReactNode,
+  onClick?: () => void,
+  children?: ReactNode,
 }
 
 export const Toggle = ({ checked, onClick, children }: ToggleProps) => (

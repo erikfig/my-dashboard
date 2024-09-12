@@ -37,3 +37,50 @@ a:hover {
   display: inline-flex;
   vertical-align: top;
 }
+
+:focus {
+  @apply focus:border-gray-900 focus:border-2 !outline-none
+}
+
+/* :focus-visible {
+  @apply !outline-none
+} */
+
+@layer components {
+  .react-select-container .react-select__control {
+    @apply flex bg-gray-50 border-2 border-gray-300 hover:border-gray-300 focus:border-2 text-gray-900 text-sm rounded-lg w-full p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+  }
+
+  .react-select-container.error .react-select__control {
+    @apply border-red-500
+  }
+
+  .react-select-container .react-select__control--is-focused {
+    @apply border-2 border-gray-900 hover:border-gray-900 shadow-none;
+  }
+
+  .react-select-container.error .react-select__control--is-focused {
+    @apply border-2 border-red-500 hover:border-red-500 shadow-none;
+  }
+
+  .react-select-container .react-select__menu {
+    @apply bg-gray-100 dark:bg-gray-700;
+  }
+
+  .react-select-container .react-select__option {
+    @apply text-gray-600 dark:text-gray-200 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-800;
+  }
+  .react-select-container .react-select__option--is-focused {
+    @apply bg-gray-200 dark:bg-gray-800;
+  }
+
+  .react-select-container .react-select__indicator-separator {
+    @apply bg-gray-400;
+  }
+
+  .react-select-container .react-select__input-container,
+  .react-select-container .react-select__placeholder,
+  .react-select-container .react-select__single-value {
+    @apply text-gray-600 dark:text-gray-200;
+  }
+}

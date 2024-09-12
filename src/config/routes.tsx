@@ -3,6 +3,8 @@ import { RouteObject } from 'react-router-dom'
 import { Home } from '../pages/home'
 import { ReactNode } from 'react'
 import { NoTemplate } from '@pages/no-template'
+import { Forms } from '@pages/forms'
+import { LoginLayout } from '@layouts/default/login.layout'
 
 type RouteConfigItemProps = {
   title?: ReactNode,
@@ -37,17 +39,17 @@ export const RoutesConfig: RouteConfigItem[] = [
       menuLabel: 'Formulários',
       menuIcon: 'input',
     },
-    element: <>Formulários</>,
+    element: <Forms />,
   },
   {
-    layout: DefaultLayout,
+    layout: LoginLayout,
     path: '/login',
     props: {
       title: <><span className="material-symbols-outlined">passkey</span> Login</>,
       menuLabel: 'Login',
       menuIcon: 'passkey',
     },
-    element: <>Login</>,
+    element: <></>,
   },
   {
     path: '/empty',

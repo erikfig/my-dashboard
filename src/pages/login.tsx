@@ -53,16 +53,16 @@ export const LoginPage = () => {
             label="Email"
             type="email"
             errors={errors}
-            placeholder='Field with HTML props support'
+            placeholder='E-mail'
           />
 
           <InputController
             control={control}
             name="password"
-            label="Field text"
+            label="Password"
             type="password"
             errors={errors}
-            placeholder='Field with HTML props support'
+            placeholder='Password'
           />
 
           <InputController
@@ -75,7 +75,7 @@ export const LoginPage = () => {
             errors={errors}
           />
 
-          <Button disabled={disabled}>Login</Button>
+          <Button isLoading={disabled} disabled={disabled}>Login</Button>
         </Card>
       </FormContainer>
     </div>

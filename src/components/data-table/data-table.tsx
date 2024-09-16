@@ -1,7 +1,7 @@
 import { Card } from '../card'
 import { Pagination, PaginationProps } from '../pagination'
 import { Table, TableProps } from '../table'
-import { Typography } from '../Typography'
+import { Typography } from '../typography'
 
 type DataTableProps = { title?: string } & TableProps & PaginationProps
 

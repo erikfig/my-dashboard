@@ -28,6 +28,12 @@
       "@config/*": [
         "./src/config/*"
       ],
+      "@contexts/*": [
+        "./src/contexts/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
       "@layouts/*": [
         "./src/layouts/*"
       ],
@@ -39,6 +45,9 @@
       ],
       "@types/*": [
         "./src/types/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
       ],
     },
   },

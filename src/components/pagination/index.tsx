@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Typography } from '../Typography'
+import { Typography } from '../typography'
 
 export type PaginationProps = {
   current: number,

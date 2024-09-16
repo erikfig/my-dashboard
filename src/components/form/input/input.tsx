@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react'
 import { InputField, InputFieldProps } from './input-field'
-import { Typography } from '../../Typography'
+import { Typography } from '../../typography'
 import { Adapters } from './adapter'
 import { Label } from './label'
 

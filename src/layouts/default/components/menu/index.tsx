@@ -1,5 +1,5 @@
 import { MouseEventHandler, ReactNode, useEffect, useState } from 'react'
-import { Card } from '../../../../components/card'
+import { Card } from '@components'
 import { useLocation } from 'react-router-dom'
 import { RoutesConfig } from '@config/routes'
 

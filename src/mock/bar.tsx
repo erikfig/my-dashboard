@@ -1,5 +1,5 @@
 import { ApexOptions } from 'apexcharts'
-import { Charts } from '../components/charts'
+import { Charts } from '@components'
 
 export const Bar = () => {
   const series = [{

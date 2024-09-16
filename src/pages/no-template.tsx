@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../components/button'
-import { Typography } from '../components/Typography'
+import { Button, Typography } from '@components'
 
 export const NoTemplate = () => {
   const navigate = useNavigate()

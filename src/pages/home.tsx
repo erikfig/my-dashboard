@@ -1,12 +1,9 @@
+import { Typography } from '@components'
+import { DataTableAsync, Button, Card, CardBackground, CardStatus } from '@components'
+import { ExampleRequest } from '@hooks/example-request'
 import { Radial } from '../mock/radial'
 import { Bar } from '../mock/bar'
 import { Circle } from '../mock/circle'
-import { Typography } from '../components/Typography'
-import { Card, CardBackground } from '../components/card'
-import { CardStatus } from '../components/card/card-status'
-import { Button } from '../components/button'
-import { DataTableAsync } from '../components/data-table/data-table-async'
-import { ExampleRequest } from '../hooks/example-request'
 
 export const Home = () => {
   // Configuração de exibição do DataTable

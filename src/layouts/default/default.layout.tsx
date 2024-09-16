@@ -1,13 +1,10 @@
 import { useCallback, useState } from 'react'
-import { Rounded } from '../../components/rounded'
-import { useDarkMode } from '../../contexts/dark-mode'
+import { Rounded, Typography, Toggle, Img } from '@components'
+import { useDarkMode } from '@contexts/dark-mode'
 import './style.css'
 import { Menu, MenuItem } from './components/menu'
-import { Typography } from '../../components/Typography'
-import { Toggle } from '../../components/form/toggle'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { RoutesConfig } from '@config/routes'
-import { Img } from '../../components/img'
 
 type DefaultLayoutProps = {
   title?: string

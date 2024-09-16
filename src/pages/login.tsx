@@ -2,14 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { SubmitHandler, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-import { Button } from '../components/button'
-import { Card } from '../components/card'
-import { FormContainer } from '../components/form/form-container'
-import { InputController } from '../components/form/input'
-import { Img } from '../components/img'
-import { Rounded } from '../components/rounded'
-import { Typography } from '../components/Typography'
-import { toast } from '../components/toast'
+import { Button, Card, FormContainer, InputController, Img, Rounded, Typography, toast } from '@components'
 import { useState } from 'react'
 
 type Form = {

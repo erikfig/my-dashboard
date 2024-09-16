@@ -1,4 +1,4 @@
-import { Typography } from '../Typography'
+import { Typography } from '../typography'
 import { Card } from './default'
 
 type CardStatusProps = {

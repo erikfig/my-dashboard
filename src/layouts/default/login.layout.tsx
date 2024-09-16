@@ -1,10 +1,6 @@
 import { useCallback } from 'react'
-import { useDarkMode } from '../../contexts/dark-mode'
-import { Typography } from '../../components/Typography'
-import { Toggle } from '../../components/form/toggle'
-import { Rounded } from '../../components/rounded'
-import { Img } from '../../components/img'
-import { CardBackground } from '../../components/card'
+import { useDarkMode } from '@contexts/dark-mode'
+import { CardBackground, Img, Typography, Toggle, Rounded } from '@components'
 import { Outlet } from 'react-router-dom'
 
 export const LoginLayout = () => {

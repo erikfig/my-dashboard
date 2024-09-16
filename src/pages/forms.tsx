@@ -1,9 +1,6 @@
 import { useCallback, useState } from 'react'
-import { Button } from '../components/button'
-import { Card } from '../components/card'
-import { FormContainer } from '../components/form/form-container'
-import { Input } from '../components/form/input'
-import { useOnChange } from '../utils/handleOnChange'
+import { Button, Card, FormContainer, Input } from '@components'
+import { useOnChange } from '@utils/handleOnChange'
 
 export const Forms = () => {
   const [formData, setFormData] = useState<any>({

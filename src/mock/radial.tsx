@@ -1,5 +1,5 @@
 import { ApexOptions } from 'apexcharts'
-import { Charts } from '../components/charts'
+import { Charts } from '@components'
 
 export const Radial = () => {
   const series = [44, 55, 67, 83]

@@ -1,6 +1,6 @@
 import { DefaultLayout } from '@layouts/default/default.layout'
 import { RouteObject } from 'react-router-dom'
-import { Home } from '../pages/home'
+import { Home } from '@pages/home'
 import { ReactNode } from 'react'
 import { NoTemplate } from '@pages/no-template'
 import { Forms } from '@pages/forms'

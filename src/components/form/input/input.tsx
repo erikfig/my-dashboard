@@ -12,7 +12,7 @@ export type Option = {
 export type InputProps = InputFieldProps & {
   name: string
   label?: string
-  helpText?: ReactNode
+  helpText?: ReactNode | string
   options?: Option[]
   rows?: number
   isMulti?: boolean

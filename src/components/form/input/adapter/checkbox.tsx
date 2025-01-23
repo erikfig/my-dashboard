@@ -4,7 +4,7 @@ export const Checkbox = ({ options, name, label, value, ...props }: InputProps) 
   return (
     <div>
       {options?.map((opt) => (
-        <div className="flex items-center mt-4 pl-4">
+        <div key={opt.value} className="flex items-center mt-4 pl-4">
           <input
             id={`${name}-${opt.value}`}
             name={name}

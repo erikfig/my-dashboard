@@ -4,8 +4,9 @@ import {
   Control, Controller, FieldErrors,
 } from 'react-hook-form'
 import { Input, InputProps } from './input'
+import { ReactNode } from 'react'
 
-type InputControllerProps = {
+export type InputControllerProps = {
   control: Control<any>
   name: keyof FieldErrors
   errors: FieldErrors<any>
@@ -23,7 +24,7 @@ export const InputController = ({
         name={name}
         value={value as unknown as string || ''}
         error={!!errors?.[name]}
-        helpText={<>{errors?.[name]?.message}</>}
+        helpText={<>{errors?.[name]?.message as ReactNode}</>}
         onChange={onChange}
         width={size ? '100%' : props.width}
         {...props}

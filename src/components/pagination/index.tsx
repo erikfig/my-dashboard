@@ -61,7 +61,7 @@ export const Pagination = ({ current, total, perPage, count, disabled, onChange 
 
         {Array(pages).fill(0).map((_, index) => (
           <li>
-            <a onClick={() => handleChangePage(`change`, index + 1)} className={`${localCurrent === index + 1 ? classCurrent : classItem} ${disabled ? `cursor-default` : ''}`}>
+            <a onClick={() => handleChangePage(`change`, index + 1)} className={`${localCurrent === index + 1 ? classCurrent : classItem} ${disabled ? 'cursor-default' : 'cursor-pointer'}`}>
               {index + 1}
             </a>
           </li>

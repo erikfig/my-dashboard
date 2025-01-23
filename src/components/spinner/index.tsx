@@ -1,4 +1,4 @@
-type SpinnerProps = {
+export type SpinnerProps = {
   width?: string
   height?: string
 }

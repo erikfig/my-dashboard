@@ -1,7 +1,10 @@
 import { ApexOptions } from 'apexcharts'
 import { Charts } from '@components'
+import { useDarkMode } from '@contexts/dark-mode'
 
 export const Circle = ({ color, value }: { color: string, value: number }) => {
+  const { isDarkMode } = useDarkMode()
+
   const series = [value]
 
   const options: ApexOptions = {
@@ -39,6 +42,6 @@ export const Circle = ({ color, value }: { color: string, value: number }) => {
   }
 
   return (
-    <Charts options={options} series={series} type="radialBar" height={180} width={180} />
+    <Charts options={options} series={series} type="radialBar" height={180} width={180} isDarkMode={isDarkMode} />
   )
 }

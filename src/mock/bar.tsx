@@ -1,7 +1,10 @@
 import { ApexOptions } from 'apexcharts'
 import { Charts } from '@components'
+import { useDarkMode } from '@contexts/dark-mode'
 
 export const Bar = () => {
+  const { isDarkMode } = useDarkMode()
+
   const series = [{
     name: 'Net Profit',
     data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
@@ -53,6 +56,6 @@ export const Bar = () => {
 
 
   return (
-    <Charts options={options} series={series} type="bar" height={350} />
+    <Charts options={options} series={series} type="bar" height={350} isDarkMode={isDarkMode} />
   )
 }

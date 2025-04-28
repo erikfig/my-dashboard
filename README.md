@@ -1,50 +1,89 @@
-# React + TypeScript + Vite
+# Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Dashboard Screenshot](./screen.png)
 
-Currently, two official plugins are available:
+## Descrição
+Este é o projeto do Dashboard, uma aplicação front-end construída com React, Vite e Tailwind CSS. Ele consome componentes reutilizáveis do projeto `components` e utiliza uma arquitetura modular para facilitar a manutenção e escalabilidade.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Iniciar um novo projeto
 
-## Expanding the ESLint configuration
+É possível iniciar o projeto do zero sem a necessidade de cloná-lo diretamente. Para isso, você pode usar o comando `npx` ou `yarn create` para criar o projeto a partir do repositório GitHub.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Passos:
+1. Certifique-se de que você tem o Node.js e o gerenciador de pacotes (npm ou yarn) instalados.
+2. Execute o seguinte comando para criar o projeto diretamente do GitHub:
+   ```bash
+   npx degit erikfigueiredo/my-dashboard-base#dashboard my-dashboard
+   ```
+   ou, se estiver usando yarn:
+   ```bash
+   yarn create degit erikfigueiredo/my-dashboard-base#dashboard my-dashboard
+   ```
+3. Navegue até o diretório do projeto:
+   ```bash
+   cd my-dashboard
+   ```
+4. Instale as dependências:
+   ```bash
+   yarn install
+   ```
+5. Configure o arquivo `.env` com a variável `VITE_BASE_APP` para definir o subdiretório base.
+6. Execute o servidor de desenvolvimento:
+   ```bash
+   yarn dev
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+## Estrutura do Projeto
+- **public/**: Contém arquivos estáticos como imagens e o arquivo `index.html`.
+- **src/**: Contém o código-fonte principal, incluindo:
+  - **components/**: Componentes específicos do dashboard.
+  - **config/**: Configurações como rotas.
+  - **contexts/**: Contextos globais, como o modo escuro.
+  - **hooks/**: Hooks personalizados.
+  - **layouts/**: Layouts reutilizáveis.
+  - **mock/**: Dados e gráficos simulados.
+  - **pages/**: Páginas principais da aplicação.
+  - **router/**: Configuração do roteador.
+  - **utils/**: Funções utilitárias.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Configuração e Execução
+1. Instale as dependências:
+   ```bash
+   yarn install
+   ```
+2. Configure o arquivo `.env` com a variável `VITE_BASE_APP` para definir o subdiretório base.
+3. Execute o servidor de desenvolvimento:
+   ```bash
+   yarn dev
+   ```
+4. Para construir o projeto para produção:
+   ```bash
+   yarn build
+   ```
+
+## Dependências Principais
+- React
+- Vite
+- Tailwind CSS
+- React Router
+- ApexCharts
+
+## Scripts Disponíveis
+- `yarn dev`: Inicia o servidor de desenvolvimento.
+- `yarn build`: Gera a build de produção.
+- `yarn preview`: Visualiza a build de produção.
+- `yarn lint`: Executa o linter.
+- `yarn test`: Executa os testes.
+
+## Dependência: @components
+
+O projeto utiliza o pacote `@components`, disponível no repositório [my-dashboard-components](https://github.com/erikfig/my-dashboard-components). Este pacote fornece uma coleção de componentes reutilizáveis, como botões, tabelas, gráficos e muito mais, projetados para serem integrados facilmente ao dashboard.
+
+Para instalar ou atualizar a dependência, certifique-se de que o `package.json` está configurado corretamente:
+```json
+"dependencies": {
+  "@components": "github:erikfigueiredo/my-dashboard-base#components"
+}
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+O pacote é automaticamente buildado ao ser instalado, garantindo que a versão mais recente esteja disponível para uso.

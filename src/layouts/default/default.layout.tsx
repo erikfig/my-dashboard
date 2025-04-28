@@ -51,7 +51,7 @@ export const DefaultLayout = ({ title }: DefaultLayoutProps) => {
             </div>
 
             <a href="" className="flex items-center gap-3">
-              <Rounded><Img src="/logo.png" width={50} height={50} /></Rounded>
+              <Rounded><Img src={`${import.meta.env.VITE_BASE_APP}logo.png`} width={50} height={50} /></Rounded>
               {' '}
               <span>Erik <span className='text-primary'>Dashboard</span></span>
             </a>

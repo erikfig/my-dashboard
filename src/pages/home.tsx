@@ -90,7 +90,7 @@ export const Home = () => {
         <DataTableAsync title='Last Users' query={query} columns={columns} onChange={(p) => setPage(p)} />
 
         <Card className="xl:col-span-4 !bg-transparent">
-          <CardBackground src="/programmer.jpeg" className="bg-dark/80 text-white">
+          <CardBackground src={`${import.meta.env.VITE_BASE_APP}programmer.jpeg`} className="bg-dark/80 text-white">
             <Typography type="h2" className='mb-4'>Erik Figueiredo</Typography>
             <Typography>Desenvolvedor FullStack Sênior com mais de 15 anos de experiência, especializado em Node.js, TypeScript e PHP.</Typography>
             <Button href="https://erikfigueiredo.com.br/" target="blank"><span className="material-symbols-outlined">link</span> Site</Button>

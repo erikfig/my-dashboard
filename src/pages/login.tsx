@@ -43,7 +43,7 @@ export const LoginPage = () => {
       <FormContainer style={{ maxWidth: 400, width: '100%' }} onSubmit={handleSubmit(submit)}>
         <Card className='flex gap-6 flex-col'>
           <Typography type="h2" className="flex items-center gap-3">
-            <Rounded><Img src="/logo.png" width={50} height={50} /></Rounded>
+            <Rounded><Img src={`${import.meta.env.VITE_BASE_APP}logo.png`} width={50} height={50} /></Rounded>
             Sign in to your account
           </Typography>
 
